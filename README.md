@@ -38,6 +38,21 @@ fn add(a: i32, b: i32): i32 {
 }
 ```
 
+## Generics
+Generics are placed inside parentheses:
+```
+class Vector(T) {
+  x: T;
+  y: T;
+  z: T;
+  fn self:add(Vector(T) other) {
+    return Vector(T){self.x + other.x, self.y + other.y, self.z + other.z};
+  }
+}
+
+Vector(i32) vec;
+```
+
 ## OOP
 Lode does not support inheritence. However, it does support a few key things we believe are helpful in procedural programming.
 
@@ -45,5 +60,7 @@ Lode does not support inheritence. However, it does support a few key things we 
 Traits come almost directly from Rust, with a couple new parts.
 Example definition:
 ```
-trait add {
-  fn 
+trait add(T) {
+  fn add(a: T, b: T): T;
+  fn sub(a: T, b: T): T;
+  
