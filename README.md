@@ -28,7 +28,22 @@ Strings are stored in UTF-8. For ASCII and UTF-16, use `u8[]` and `u16[]` respec
 ### date
 This is variable holds the date and time. It holds both the 64-bit unix time as well as the year, month, year week, month week, year day, month day, hour, minute, and second.
 
+_Note: Nothing passed this point is finalized_
+## Functions
+Like variables, functions are also post-typed:
+```
+fn add(a: i32, b: i32): i32 {
+  var c = a + b;
+  ret c;
+}
+```
+
 ## OOP
 Lode does not support inheritence. However, it does support a few key things we believe are helpful in procedural programming.
 
 ### Traits
+Traits come almost directly from Rust, with a couple new parts.
+Example definition:
+```
+trait add {
+  fn 
